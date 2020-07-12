@@ -1,0 +1,44 @@
+<center><img src="images/site_banner_frozen.gif"></center>
+<br>
+<table align="center" width="70%" class="outer" cellspacing="1">
+  <tr>
+    <th colspan=3 align="center"><{$lang_halloffame}></th>
+  </tr>
+  <tr>
+    <th align="center"><{$lang_level}></th>
+    <th align="center"><{$lang_time}></th>
+    <th align="center"><{$lang_name}></th>
+  </tr>
+
+  <{foreach item=score from=$halloffamescores}>
+  <tr class="<{cycle values="even,odd"}>">
+    <td align="center"><{$score.level}></td>
+    <td align="center"><{$score.time}></td>
+    <td align="center"><{$score.name}></td>
+  </tr>
+  <{/foreach}>
+</table>
+
+<BR><BR>
+<{foreach item=level from=$levels}>
+<{if $level.numberofscores>0}>
+	<table align="center" width="70%" class="outer" cellspacing="1">
+  	<tr>
+    		<th colspan=3 align="center"><{$lang_level}> <{$level.number}></th>
+  	</tr>
+  	<tr>
+    		<th align="center"><{$lang_rank}></th>
+    		<th align="center"><{$lang_time}></th>
+    		<th align="center"><{$lang_name}></th>
+  	</tr>
+  	<{foreach item=score from=$level.scores}>
+  	<tr class="<{cycle values="even,odd"}>">
+    		<td align="center"><{$score.level}></td>
+    		<td align="center"><{$score.time}></td>
+    		<td align="center"><{$score.name}></td>
+  	</tr>
+  	<{/foreach}>
+	</table>
+	<BR><BR>
+<{/if}>
+<{/foreach}>
